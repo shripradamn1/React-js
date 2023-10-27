@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import About from "./props/About";
+import Shri from "./props/Shri";
+
 function App() {
-  const [count, setCount] = useState("Hello");
-  return ( 
+  return (
     <>
-   <div>
-      <p>You : {count} </p>
-      <button onClick={() => setCount("Hi there!")}>
-        Click me
-      </button>
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Routes>
+          <Route path="/home" element={<Shri/>} />
+        </Routes>
+      </Router>
     </>
   );
 }
